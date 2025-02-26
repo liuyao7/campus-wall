@@ -1,0 +1,47 @@
+# database:
+#   driver: mysql
+#   host: localhost
+#   port: 3306
+#   username: root
+#   password: 274346988@msql.coM
+#   dbname: campus_wall
+#   charset: utf8mb4
+#   parseTime: true
+#   loc: Local
+#   max_idle_conns: 10
+#   max_open_conns: 100
+#   conn_max_lifetime: 3600
+
+
+server:
+  port: "8080"
+  read_timeout: 10s
+  write_timeout: 10s
+
+database:
+  driver: "postgres"
+  host: "localhost"
+  # port: 5432
+  port: 3306
+  username: "root"
+  password: "274346988@mysql.coM"
+  dbname: "campus_wall"
+  sslmode: "disable"
+
+jwt:
+  secret_key: "your-secret-key-here"
+  token_duration: 24h
+
+redis:
+  host: "localhost"
+  port: 6379
+  password: ""
+  db: 0
+
+logger:
+  level: "debug"
+  filename: "logs/app.log"
+  max_size: 100    # megabytes
+  max_backups: 3
+  max_age: 28      # days
+  compress: true

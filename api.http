@@ -1,0 +1,30 @@
+@baseUrl = http://localhost:8080
+@token = your_jwt_token
+
+### 健康检查
+GET {{baseUrl}}/ping
+
+### 微信登录
+POST {{baseUrl}}/wx/login
+Content-Type: application/json
+
+{
+    "code": "test_code",
+    "nickname": "测试用户",
+    "avatar": "https://example.com/avatar.jpg",
+    "gender": 1
+}
+
+### 创建帖子
+POST {{baseUrl}}/api/posts
+Authorization: Bearer {{token}}
+Content-Type: application/json
+
+{
+    "content": "测试帖子内容",
+    "images": "https://example.com/image1.jpg,https://example.com/image2.jpg"
+}
+
+### 获取帖子列表
+GET {{baseUrl}}/api/posts
+Authorization: Bearer {{token}}
